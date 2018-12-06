@@ -22,7 +22,7 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/cafe';
 } else {
-    urlDB = process.env.MONGO_URI_MLAB; //Hemos creado una variable de entorno en el servidor con la ruta a la bd de MLAB
+    urlDB = process.env.MONGO_URI_MLAB; //Hemos creado una variable de entorno en el servidor con la ruta a la bd de MLAB.
 }
 
 process.env.URLDB = urlDB;
