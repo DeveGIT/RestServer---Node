@@ -51,7 +51,7 @@ let usuarioSchema = new Schema({
 
 });
 
-//con esto quitamos el campo password a la hora de imprimirlo. No usar funciond flecha, ya que se necesita this
+//con esto quitamos el campo password a la hora de imprimirlo. No usar funcion de flecha, ya que se necesita this
 usuarioSchema.methods.toJSON = function() {
 
     let user = this;
