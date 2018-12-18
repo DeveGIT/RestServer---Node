@@ -18,7 +18,7 @@ const app = express();
 app.get('/usuario', verificaToken, (req, res) => { //verificaToken es el middleweare que se va a dispar al llamar a la url mediante get,
 
 
-    let desde = req.query.desde || 0;
+    let desde = req.params.desde || 0;
     desde = Number(desde); //lo que recuperamos de la url lo convertimos en un número
 
     let limite = req.query.limite || 5;
@@ -71,7 +71,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
     let usuario = new Usuario({
         nombre: body.nombre,
-        email: body.email,
+        email: body.email.toLowerCase(),
         password: hash, // bcrypt.hassySync() encripta directamente de forma sincrona sin devolver una promesa
         role: body.role
     }); //Esto crea una nueva instancia del modelo Usuario

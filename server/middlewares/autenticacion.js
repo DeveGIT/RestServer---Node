@@ -10,7 +10,7 @@ let verificaToken = (req, res, next) => {
 
     let token = req.get('token'); //recibimos el toquen en el head de la consulta get
 
-    //console.log(token);
+    console.log(token);
 
     jwt.verify(token, process.env.seedToken, (err, decoded) => { //esta funcion verifica si coinciden tanto el token enviado por el usuario como el token generado por nosotros
 
